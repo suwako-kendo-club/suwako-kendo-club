@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="諏訪湖剣道クラブは、原村剣道クラブ・中洲剣道クラブ・下諏訪剣道協会の3団体からなる剣道クラブチームです。">
+  <meta name="theme-color" content="#101d30">
+  <title>諏訪湖剣道クラブ｜心を磨き、技を磨き、仲間とともに。</title>
+  <style>
+    :root {
+      --navy: #101d30;
+      --navy-2: #1b304b;
+      --gold: #c7a45a;
+      --gold-light: #ead9ad;
+      --ink: #202938;
+      --muted: #667085;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --line: #e5e1d7;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", Meiryo, sans-serif; line-height: 1.8;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100% - 36px, var(--max)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(234,217,173,.3); }
+    .nav { min-height: 70px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:800; letter-spacing:.08em; }
+    .crest {
+      width:42px; height:42px; border:1px solid var(--gold); border-radius:50%;
+      display:grid; place-items:center; color:var(--gold-light); font-family:serif; font-size:22px;
+    }
+    .brand small { display:block; color:#c8d0db; font-size:9px; letter-spacing:.2em; font-weight:500; }
+    .navlinks { display:flex; gap:22px; font-size:13px; }
+    .navlinks a { text-decoration:none; color:#e6eaf0; }
+    .navlinks a:hover { color:var(--gold-light); }
+    .hero {
+      color:#fff; background:
+        radial-gradient(ellipse at 78% 28%, rgba(199,164,90,.18), transparent 34%),
+        linear-gradient(135deg, #101d30 0%, #1b304b 65%, #263d55 100%);
+      position:relative; overflow:hidden; min-height:540px; display:flex; align-items:center;
+    }
+    .hero:after {
+      content:""; position:absolute; left:-10%; right:-10%; bottom:-100px; height:190px;
+      border-top:2px solid rgba(234,217,173,.35); border-radius:50%;
+      box-shadow:0 -18px 0 -16px rgba(234,217,173,.3), 0 -38px 0 -36px rgba(234,217,173,.22);
+      transform:rotate(-3deg);
+    }
+    .hero-inner { position:relative; z-index:1; padding:82px 0 110px; max-width:760px; }
+    .eyebrow { color:var(--gold-light); letter-spacing:.24em; font-size:11px; font-weight:700; }
+    h1 { margin:20px 0 14px; font-size:clamp(34px, 7vw, 62px); line-height:1.35; letter-spacing:.07em; }
+    .hero p { color:#dce3ec; max-width:620px; margin:0; font-size:15px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:0 22px; border-radius:3px; text-decoration:none; font-weight:700; font-size:13px; }
+    .btn-gold { background:var(--gold); color:#172337; }
+    .btn-outline { border:1px solid rgba(255,255,255,.55); color:#fff; }
+    .photo-note {
+      margin-top:30px; border:1px dashed rgba(234,217,173,.55); color:#d9dfE8;
+      padding:12px 15px; font-size:11px; max-width:560px; background:rgba(255,255,255,.035);
+    }
+    section { padding:76px 0; }
+    .section-head { margin-bottom:30px; }
+    .section-kicker { color:#98783b; font-size:11px; letter-spacing:.22em; font-weight:800; }
+    h2 { color:var(--navy); margin:7px 0 0; font-size:clamp(25px,4vw,36px); letter-spacing:.04em; line-height:1.4; }
+    .lead { color:var(--muted); max-width:760px; margin:15px 0 0; }
+    .about-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:42px; align-items:center; }
+    .photo-placeholder {
+      min-height:280px; display:grid; place-items:center; text-align:center; padding:24px;
+      color:#e8dfca; background:
+       linear-gradient(145deg, rgba(16,29,48,.88), rgba(27,48,75,.92)),
+       repeating-linear-gradient(45deg, transparent 0 18px, rgba(255,255,255,.04) 18px 19px);
+      border:1px solid rgba(199,164,90,.6); position:relative;
+    }
+    .photo-placeholder:before { content:"諏訪湖"; font-family:serif; font-size:44px; letter-spacing:.18em; color:rgba(234,217,173,.8); }
+    .photo-placeholder span { display:block; font-size:11px; letter-spacing:.1em; color:#dce3ec; }
+    .groups { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:28px; }
+    .group-card { background:#fff; border:1px solid var(--line); padding:22px; border-top:3px solid var(--gold); }
+    .group-card b { display:block; color:var(--navy); font-size:18px; margin-bottom:5px; }
+    .group-card span { color:var(--muted); font-size:12px; }
+    .schedule { background:#fff; }
+    .schedule-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .schedule-card { border:1px solid var(--line); padding:24px; background:#fff; }
+    .schedule-card h3 { margin:0 0 14px; color:var(--navy); font-size:18px; }
+    .day-row { display:grid; grid-template-columns:76px 1fr; gap:12px; padding:10px 0; border-top:1px solid #eeeae1; font-size:14px; }
+    .day { color:#927338; font-weight:800; }
+    .note { color:var(--muted); font-size:12px; margin:14px 0 0; }
+    .reports { background:var(--navy); color:#fff; }
+    .reports h2 { color:#fff; }
+    .reports .section-kicker { color:var(--gold-light); }
+    .report-box { border:1px solid rgba(234,217,173,.45); padding:26px; background:rgba(255,255,255,.04); }
+    .report-box strong { color:var(--gold-light); font-size:18px; }
+    .report-box p { color:#d6deea; margin-bottom:0; font-size:14px; }
+    .join-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .join-card { background:#fff; border:1px solid var(--line); padding:25px; }
+    .join-card h3 { color:var(--navy); margin:0 0 10px; }
+    .contact { background:#eeeae1; }
+    .contact-card { background:#fff; border:1px solid var(--line); padding:30px; max-width:720px; }
+    .contact-label { font-size:11px; color:#98783b; letter-spacing:.2em; font-weight:800; }
+    .email { display:inline-block; margin:8px 0 18px; color:var(--navy); font-size:clamp(17px,3vw,23px); font-weight:800; overflow-wrap:anywhere; }
+    footer { background:#0b1524; color:#aeb9c8; padding:25px 0; font-size:11px; text-align:center; }
+    .mobile-cta { display:none; }
+    @media (max-width:700px) {
+      .wrap { width:min(100% - 30px, var(--max)); }
+      .nav { min-height:62px; }
+      .navlinks { display:none; }
+      .hero { min-height:510px; }
+      .hero-inner { padding:68px 0 100px; }
+      .hero p { font-size:14px; }
+      section { padding:58px 0; }
+      .about-grid, .schedule-grid, .join-grid { grid-template-columns:1fr; }
+      .about-grid { gap:24px; }
+      .photo-placeholder { min-height:210px; }
+      .groups { grid-template-columns:1fr; gap:10px; }
+      .group-card { padding:17px 19px; }
+      .mobile-cta { display:block; position:sticky; bottom:0; z-index:5; background:rgba(16,29,48,.97); padding:10px 15px; }
+      .mobile-cta a { display:block; text-align:center; background:var(--gold); color:#172337; text-decoration:none; padding:10px; font-size:13px; font-weight:800; border-radius:3px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="crest">湖</span>
+      <span>諏訪湖剣道クラブ<small>SUWAKO KENDO CLUB</small></span>
+    </a>
+    <nav class="navlinks" aria-label="メインメニュー">
+      <a href="#about">クラブ紹介</a><a href="#schedule">稽古日程</a><a href="#results">大会結果・活動報告</a><a href="#join">入会案内</a><a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">SUWAKO KENDO CLUB</div>
+      <h1>心を磨き、技を磨き、<br>仲間とともに。</h1>
+      <p>原村剣道クラブ・中洲剣道クラブ・下諏訪剣道協会。<br>三つの団体がつながり、地域の仲間とともに稽古に励む剣道クラブチームです。</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#schedule">稽古日程を見る</a>
+        <a class="btn btn-outline" href="#join">見学・入会について</a>
+      </div>
+      <div class="photo-note">ここにクラブの集合写真・稽古風景などのメイン写真を配置できます。</div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="section-head">
+            <div class="section-kicker">ABOUT US</div>
+            <h2>三つの団体がつながる、<br>諏訪湖の剣道チーム。</h2>
+          </div>
+          <p class="lead">諏訪湖剣道クラブは、原村剣道クラブ・中洲剣道クラブ・下諏訪剣道協会の3団体からなるクラブチームです。それぞれの団体で日々の稽古に励みながら、月に2〜3回の合同稽古を実施しています。</p>
+          <p class="lead">団体の垣根を越えて仲間と切磋琢磨し、技術の向上を目指してともに稽古に取り組んでいます。</p>
+        </div>
+        <div class="photo-placeholder"><span>クラブの活動写真に差し替えてください</span></div>
+      </div>
+      <div class="groups">
+        <div class="group-card"><b>原村剣道クラブ</b><span>通常稽古：水曜日・金曜日</span></div>
+        <div class="group-card"><b>中洲剣道クラブ</b><span>通常稽古：水曜日・日曜日</span></div>
+        <div class="group-card"><b>下諏訪剣道協会</b><span>通常稽古：水曜日・金曜日・日曜日</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">PRACTICE SCHEDULE</div>
+        <h2>稽古日程</h2>
+        <p class="lead">各団体の通常稽古に加え、合同稽古・合同自主練習を行っています。</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h3>各団体の通常稽古</h3>
+          <div class="day-row"><span class="day">水曜日</span><span>原村・中洲・下諏訪</span></div>
+          <div class="day-row"><span class="day">金曜日</span><span>原村・下諏訪</span></div>
+          <div class="day-row"><span class="day">日曜日</span><span>中洲・下諏訪</span></div>
+        </div>
+        <div class="schedule-card">
+          <h3>諏訪湖剣道クラブ合同活動</h3>
+          <div class="day-row"><span class="day">火曜日</span><span>合同自主練習</span></div>
+          <div class="day-row"><span class="day">木曜日</span><span>合同自主練習</span></div>
+          <div class="day-row"><span class="day">日曜日</span><span>合同稽古（月2〜3回）</span></div>
+          <p class="note">※合同稽古・自主練習の具体的な日程、時間、場所は事前にお問い合わせください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reports" id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">NEWS & RESULTS</div>
+        <h2>大会結果・活動報告</h2>
+        <p class="lead" style="color:#d6deea">大会での挑戦や日々の活動をお知らせします。</p>
+      </div>
+      <div class="report-box">
+        <strong>活動報告を随時更新します</strong>
+        <p>大会結果、合同稽古の様子、クラブの活動などをこちらに掲載していきます。</p>
+        <p>※更新時は、この欄に「大会名・開催日・結果・写真」などを追加してください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">JOIN US</div>
+        <h2>見学・体験・入会について</h2>
+        <p class="lead">諏訪湖剣道クラブへの所属を希望される方は、下記3団体のいずれかに所属していただきます。</p>
+      </div>
+      <div class="join-grid">
+        <div class="join-card">
+          <h3>所属団体</h3>
+          <p>・原村剣道クラブ<br>・中洲剣道クラブ<br>・下諏訪剣道協会</p>
+          <p class="note">いずれかの団体に所属し、各団体の通常稽古や合同活動に参加していただきます。</p>
+        </div>
+        <div class="join-card">
+          <h3>まずはお気軽にご相談ください</h3>
+          <p>見学や体験をご希望の方、稽古日程や所属について確認したい方は、事務局までお問い合わせください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-kicker">CONTACT</div>
+        <h2>お問い合わせ</h2>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">SUWAKO KENDO CLUB OFFICE</div>
+        <h3 style="margin:8px 0 0;color:#101d30">諏訪湖剣道クラブ 事務局</h3>
+        <p style="margin:2px 0 0">担当：井上</p>
+        <a class="email" href="mailto:suwako.kendo.club@gmail.com">suwako.kendo.club@gmail.com</a>
+        <div><a class="btn btn-gold" href="mailto:suwako.kendo.club@gmail.com?subject=%E8%AB%8F%E8%A8%AA%E6%B9%96%E5%89%A3%E9%81%93%E3%82%AF%E3%83%A9%E3%83%96%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="mobile-cta"><a href="mailto:suwako.kendo.club@gmail.com">見学・入会について問い合わせる</a></div>
+<footer>
+  <div class="wrap">© 諏訪湖剣道クラブ　SUWAKO KENDO CLUB</div>
+</footer>
+</body>
+</html>
